@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "node-tweet-stream": "^1.8.1",
+    "socket.io": "^1.3.5"
+  }
+}
