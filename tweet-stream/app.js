@@ -18,8 +18,11 @@ app.get( '/', function( req, res ) {
 io.on( 'connection', function( socket ) {
   console.log( 'socket.io connected!' );
   tw.track( 'nodejs' );
+  tw.track( 'socketio' );
+  tw.track( 'javascript' );
+  tw.track( 'wordpress' );
+  tw.track( 'wp' );
   tw.on( 'tweet', function( tweet ) {
-    console.log( 'sending tweets...' );
     socket.emit( 'tweet', tweet );
     console.log( (counter++) + '. ' + tweet.text + '\nvia @' + tweet.user.screen_name + '\n' );
   });
