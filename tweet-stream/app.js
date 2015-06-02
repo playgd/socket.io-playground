@@ -1,11 +1,29 @@
 'use strict';
 
 var config = require( './config.json' );
-var io = require( 'socket.io' )( 3000 );
+var express = require( 'express' );
+var app = express();
+var serveStatic = require( 'serve-static' );
+var server = require( 'http' ).Server( app );
+var io = require( 'socket.io' )( server );
 var tw = require( 'node-tweet-stream' )( config );
-tw.track( 'javascript' );
 var counter = 0;
-tw.on( 'tweet', function( tweet ) {
-  io.emit( 'tweet', tweet );
-  console.log( (counter++) + '. ' + tweet.text + '\nvia @' + tweet.user.screen_name + '\n' );
+
+app.use( serveStatic( __dirname + '/public' ) );
+app.get( '/', function( req, res ) {
+  res.sendFile( __dirname + '/public/index.html' );
 });
+
+
+io.on( 'connection', function( socket ) {
+  console.log( 'socket.io connected!' );
+  tw.track( 'nodejs' );
+  tw.on( 'tweet', function( tweet ) {
+    console.log( 'sending tweets...' );
+    socket.emit( 'tweet', tweet );
+    console.log( (counter++) + '. ' + tweet.text + '\nvia @' + tweet.user.screen_name + '\n' );
+  });
+});
+
+server.listen( 3000 );
+console.log( 'Magic happens on http://localhost:3000' );
