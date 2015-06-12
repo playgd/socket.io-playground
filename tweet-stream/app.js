@@ -20,7 +20,7 @@ io.on( 'connection', function( socket ) {
   tw.track('wordcampbh');
   tw.on( 'tweet', function( tweet ) {
     socket.emit( 'tweet', tweet );
-    console.log( (counter++) + '. ' + tweet.text + '\nvia @' + tweet.user.screen_name + '\n', tweet );
+    console.log( (counter++) + '. ' + tweet.text + '\nvia @' + tweet.user.screen_name + '\n' );
   });
 });
 
