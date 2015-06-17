@@ -12,3 +12,4 @@ app.get( '/', function( req, res ) {
 });
 
 server.listen( 3000 );
+console.log( 'The chat magic is happen on http://localhost:3000' );
