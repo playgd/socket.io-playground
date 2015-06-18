@@ -8,8 +8,9 @@
 <body>
   <ul id="messages" data-js="messages"></ul>
 
-  <form action="">
-    <input type="text" id="m" autocomplete="off" />
+  <form action="" data-js="form">
+    <span data-js="is-typing" class="is-typing hide">Another user is typing...</span>
+    <input type="text" id="m" data-js="input" autocomplete="off" />
     <button>Send</button>
   </form>
 
