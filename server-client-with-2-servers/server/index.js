@@ -7,7 +7,7 @@ let ioClient = require('socket.io-client');
 var socketClient = ioClient.connect(`http://localhost:${clientPort}`);
 
 socketClient.on('connect', () => {
-  console.log('io server connected!');
+  console.log(`io server connected on port ${port}!`);
   socketClient.emit('myServerEvent', 'Message sent by server.');
 });
 
