@@ -12,7 +12,6 @@ io.on('connect', (socket) => {
   });
 });
 
-
 io.on('disconnect', () => {
   console.log('io client disconnected!');
 });

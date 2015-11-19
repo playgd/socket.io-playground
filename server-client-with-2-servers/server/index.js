@@ -14,4 +14,4 @@ ioClient.on('myClientEvent', (data) => {
 
 ioClient.on('disconnect', () => {
   console.log('io server disconnected from client!');
-})
+});
