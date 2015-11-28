@@ -7,11 +7,13 @@
   socket.on( 'tweet', function( data ) {
     screenName = data.user.screen_name;
     text = '<li class="tweets-list__item">' +
-        '<img src="' + data.user.profile_image_url + '" />' +
-        data.text + ' via ' +
-        '<strong>' +
-          '<a href="https://twitter.com/' + screenName + '">@' + screenName + '</a>' +
-        '</strong>' +
+        '<p>' +
+          '<img src="' + data.user.profile_image_url + '" />' +
+          data.text + ' via ' +
+          '<strong>' +
+            '<a href="https://twitter.com/' + screenName + '">@' + screenName + '</a>' +
+          '</strong>' +
+        '</p>' +
       '</li>';
 
     tweet.unshift( text );
