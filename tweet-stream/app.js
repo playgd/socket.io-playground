@@ -17,7 +17,7 @@ app.get( '/', function( req, res ) {
 
 io.on( 'connection', function( socket ) {
   console.log( 'socket.io connected!' );
-  tw.track('wordcampbh');
+  tw.track( 'wordcampsp' );
   tw.on( 'tweet', function( tweet ) {
     socket.emit( 'tweet', tweet );
     console.log( (counter++) + '. ' + tweet.text + '\nvia @' + tweet.user.screen_name + '\n' );

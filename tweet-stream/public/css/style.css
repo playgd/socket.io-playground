@@ -39,7 +39,7 @@ body {
 .tweets-list:before {
   background: #7681FD;
   color: #E1E3EF;
-  content: 'Tweet Stream #wordcampbh';
+  content: 'Tweet Stream #wordcampsp';
   display: block;
   font-size: 30px;
   height: 80px;
@@ -63,13 +63,12 @@ body {
 }
 
 .tweets-list__item {
+  align-items: center;
+  color: #555;
   display: flex;
+  font-size: 18px;
   line-height: 1.5;
-  margin: 0 0 10px;
-}
-
-..tweets-list__item * {
-  align-self: center;
+  margin: 15px 0;
 }
 
 .tweets-list__item:after {
@@ -82,4 +81,12 @@ body {
   border-radius: 100%;
   float: left;
   margin: 0 10px 10px 0;
+}
+
+.tweets-list__item a {
+  color: #726EF7;
+}
+
+.tweets-list__item a:hover {
+  color: #3E4CA0;
 }
